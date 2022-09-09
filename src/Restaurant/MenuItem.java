@@ -1,16 +1,22 @@
 package Restaurant;
 
+import java.time.LocalDate;
+import java.time.ZoneId;
+import java.util.ArrayList;
 import java.util.Date;
 
 public class MenuItem {
     //Private int itemCode;
+    ArrayList<Object> menuItems = new ArrayList<Object>();
     private Double Price;
     private String Description;
     private String Category;
-    private Date menuAddedOn;
+    private LocalDate menuAddedOn;
     private Boolean newItem;
 
-    public MenuItem(Double price, String description, String category, Date menuAddedOn, Boolean newItem) {
+
+
+    public MenuItem(Double price, String description, String category, LocalDate menuAddedOn, Boolean newItem) {
         Price = price;
         Description = description;
         Category = category;
@@ -18,7 +24,28 @@ public class MenuItem {
         this.newItem = newItem;
     }
 
-    public Double getPrice() {
+//    public void AddRemoveMenuItem(String choice) {
+//        if (choice.toLowerCase() == "add"){
+//            menuItems.add(getPrice());
+//            menuItems.add(getDescription());
+//            menuItems
+//            this.menuAddedOn = LocalDate.now(ZoneId.of( "America/Montreal"));
+//    } else if (choice.toLowerCase() == "remove") {
+//
+//        }
+//        }
+
+
+        public String newItem (){
+        if(this.newItem){
+            return "This item is new!";
+        }
+        else {
+            return "This item is not new!";
+        }
+        }
+
+        public Double getPrice() {
         return Price;
     }
 
